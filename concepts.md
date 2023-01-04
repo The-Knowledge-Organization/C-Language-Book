@@ -65,7 +65,7 @@ essas descrições se tornam o código fonte de determinada aplicação a qual e
 ___
 
 - ### Assembler
- 
+  
 
 ___
 
@@ -82,7 +82,8 @@ executar esse código, isso tudo dependerá do compilador utilizado e a versão 
 ___
 
 - ### Arquivo de cabeçalho
-
+ Os arquuivos de cabeçalho conhecidos como "header" são arquivos onde por convenção incluirá bibliotecas, comandos para o pré-processador, funções e dentre outras coisas 
+que você necessitará ao longo do projeto para serem utilizados pelo seu arquivo de onde está o código fonte.
 ___
 
 - ### Tempo de compilação 
