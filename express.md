@@ -417,11 +417,11 @@ int main(void){
 }
 ```
 
-###  **Operadores Bit-a-Bit** 
- Operadores bit-a-bit servem para atribuir, deslocar bits em bytes ou strings apenas int e char, cada um contém sua "tabela verdade".
+### **Operadores Bit-a-Bit** 
+Operadores bit-a-bit servem para atribuir, deslocar bits em bytes ou strings apenas int e char, cada um contém sua "tabela verdade".
 
-**And**  
- O operador bit-a-bit and "&" desativa o bit de paridade, "and" bit-a-bit é similar ao and lógico.
+**And (&)** 
+O operador bit-a-bit and "&" desativa o bit de paridade, "and" bit-a-bit é similar ao and lógico.
 
 ```c
  1100 0001	/* valor de "x" em binário. */
@@ -430,189 +430,210 @@ int main(void){
  0100 0001	/* "x" sem paridade. */
 ```
 
-Or ( | ): ativa os bits com quando é comparado "or" bit-a-bit é similar ao or lógico.
-```c
-```
+**Or ( | )** 
+Ativa os bits com quando é comparado "or" bit-a-bit é similar ao or lógico.
+
 128|3;
-
- 1000 0000 /* 128 em binário.
- 0000 0011 /* 3 em binário.
+```c
+ 1000 0000 /* 128 em binário. */
+ 0000 0011 /* 3 em binário.   */
 |
- 1000 0011 /* 131 em binário.
-
-
-Or exclusivo (XOR) ( ^ ): ativa os bits quando apenas os comparados são diferentes.
-```c
+ 1000 0011 /* 131 em binário. */
 ```
+
+
+**Or exclusivo (XOR) ( ^ )**
+Ativa os bits quando apenas os comparados são diferentes.
+
 127^120;
-
- 0111 1111 /* 127 em binário.
- 0111 1000 /* 120 em binário.
+```c
+ 0111 1111 /* 127 em binário. */
+ 0111 1000 /* 120 em binário. */
 ^
- 0000 0111 /* 7 em binário.
-
-
-Complemento de um ( ~ ): inverte o estado atual dos bits.
-```c
+ 0000 0111 /* 7 em binário.   */
 ```
- 1110 0110 /* byte original
- 0001 1001 /* após o primeiro complemento.
- 1110 0110 /* após o segundo complemento.
 
-
-Deslocamento a esquerda ( << ): deslocará bits para a esquerda e adicionarará zeros aos da direita.
+**Complemento de um ( ~ )**
+Inverte o estado atual dos bits.
 ```c
+ 1110 0110 /* byte original                */
+ 0001 1001 /* após o primeiro complemento. */
+ 1110 0110 /* após o segundo complemento.  */
 ```
-x = y<<1; /* "y" tem seu valor atribuido 7 e se deslocará apenas um bit a esquerda.
-0000 0111 /* 7 em binário e antes da deslocação.
-0000 1110 /* 14 em binário e após a deslocação.
 
 
-Deslocamento a direita ( >> ): deslocará bits para a direita e adicionarará zeros aos da esquerda.
+**Deslocamento a esquerda ( << )**
+Deslocará bits para a esquerda e adicionarará zeros aos da direita.
+
 ```c
+/*
+ * "y" tem seu valor atribuido a 7 e se deslocará
+ * apenas 1 bit a esquerda.
+ */
+x = y<<1;
+
+0000 0111 /* 7 em binário e antes da deslocação. */
+0000 1110 /* 14 em binário e após a deslocação.  */
 ```
-x = y<<1; /* y tem seu valor atribuido 14 e se deslocará apenas um bit a direita.
-0000 1110 /* 14 em binário e antes da deslocação.
-0000 0111 /* 7 em binário e após a deslocação.
 
 
--- Operador ternário --
-Ternário ( ?: ) : Serve para substituir o if-else em casos específicos, utiliza expressões assim como if-else.
+**Deslocamento a direita ( >> )**
+Deslocará bits para a direita e adicionarará zeros aos da esquerda.
 ```c
+/*
+ * "y" tem seu valor atribuido a 14 e se deslocará
+ * apenas 1 bit a direita.
+ */
+x = y>>1;
+
+0000 1110 /* 14 em binário e antes da deslocação. */
+0000 0111 /* 7 em binário e após a deslocação.    */
 ```
-x == y ? y : z; /* se "x" é igual a "y" então "y", caso não, "z".
-x == 200 ? 2 * 5 * 20 : 0; /* se "x" é igual a 200 então 2 * 5 * 20, caso não, 0.
 
 
--- Ponteiros --
- Devolvem endereço ou valor na memória do operando, referênciam elementos de uma array (matriz),
-modifica os parâmetros das chamadas de função e suporta listas encadeadas e estruturas dinâmicas de dados.
+### Operador ternário(:?)
 
-And ( & ): devolve o endereço da memória do operando.
+Serve para substituir o if-else em casos específicos, utiliza expressões assim como if-else.
+
 ```c
+// Se "x" é igual a "y" então "y", caso não, "z".
+x == y ? y : z; 
+
+/* 
+ * Se "x" é igual a 200, então 2 * 5 * 20
+ * caso contrário, 0.
+ */
+int result = x == 200 ? 2 * 5 * 20 : 0; 
 ```
+
+### **Ponteiros**
+Devolvem endereço ou valor na memória do operando, referênciam elementos de uma array (matriz), modifica os parâmetros das chamadas de função e suporta listas encadeadas e estruturas dinâmicas de dados.
+
+**And ( & )**
+Devolve o endereço da memória do operando.
+
+```c
 int a, b;
-b = &a; /* "b" está atribuindo o pointeiro que devolve o endereço da memória de "a".
 
-
-"Asterisco" ( * ): devolve o valor localizado no endereço de memória do operando.
-```c
+/*
+ * "b" está atribuindo o pointeiro que devolve
+ * o endereço da memória de "a".
+ */
+b = &a; 
 ```
+
+**"Asterisco" ( * )**
+Devolve o valor localizado no endereço de memória do operando.
+
+```c
 int *a = 10, b;
-b = *a; /* váriavel "b" tem seu valor atribuido o pointeiro de "a" que é contém o valor 10.
-
-
--- Operador de tamanho --
- Devolve o tamanho ocupado na memória por determinado operando.
-
-sizeof : devolve o tamanho em bytes do operando incluido no parâmetro formal do operador.
-```c
+ /*
+  * Váriavel "b" tem seu valor atribuido
+  * o pointeiro de "a" que é contém o valor 10.
+ */
+b = *a;
 ```
-printf("tamanho de int é: %d bytes\n", sizeof (int)); /* int corresponde a 32 bits ou 4 bytes.
 
+### **Operador de tamanho**
 
--- Operador de encadeamento --
+Devolve o tamanho ocupado na memória por determinado operando.
 
-Virgula ( , ): encadeaia multiplos operandos, no lado esquerdo do operador
+**sizeof** 
+Devolve o tamanho em bytes do operando incluido no parâmetro formal do operador.
+
+```c
+// int corresponde a 32 bits ou 4 bytes.
+printf("tamanho de int é: %d bytes\n", sizeof (int)); 
+
+/* =========================
+ * OUTPUT =>
+ * tamanho de int é: 4 bytes  
+*/
+```
+
+### Operador de encadeamento
+
+**Virgula ( , )**
+Encadeaia multiplos operandos, no lado esquerdo do operador
 será tratado como void, o lado direito torna-se o valor de toda a expressão.
+
 ```c
+/* 
+ * Define "x" como inteiro, depois "y" e "z".
+ * x = (y = 10, z = 20, y + z); /* "x" tem 
+ * seu valor atribuido a partir da expressão dentro de parênteses.
+ */
+int x, y, z; 
 ```
-int x, y, z; /* define "x" como inteiro, depois "y" e "z".
-x = (y = 10, z = 20, y + z); /* "x" tem seu valor atribuido a partir da expressão dentro de parênteses.
 
+### Operadores de referência
+Referenciam individualmente os elementos de um struct ou union.
 
--- Operadores de referência --
- Referenciam individualmente os elementos de um struct ou union.
-
-Ponto ( . ): O operador vai referenciar um elemento de um struct ou um union, abaixo um exemplo de um struct.
+**Ponto ( . )**
+O operador vai referenciar um elemento de um struct ou um union, abaixo um exemplo de um struct.
 
 ```c
 struct variant { 		/* "variant" é um identificador desse struct. */
 	int a;
 	char b[9];
 } var; 		  			/* "var" é uma váriavel do struct "variant". */
-var.a = 120;  			/* váriavel de um struct chamada "var" está referênciando o elemento "a" que tem ser valor atribuido 120. */
+
+/* 
+ * Váriavel de um struct chamada "var"
+ * está referênciando o elemento "a" que
+ * tem ser valor atribuido 120.
+ */
+var.a = 120;  			
 ```
 
+**Seta ( -> )**
+O operador servirá para referenciar um ponteiro de uma "struct".
 
-Seta ( -> ): O operador servirá para referenciar um ponteiro de uma "struct".
 ```c
+/* 
+ * Ponteiro do valor de "p" tem seu valor atribuido
+ * ao ponteiro do endereço de "var".
+ */
+struct variant *p = &var;
+
+// O ponteiro "p" está atribuindo "abc" o valor 120;
+p->abc = 120; 
 ```
-struct variant *p = &var; /* ponteiro do valor de "p" tem seu valor atribuido ao ponteiro do endereço de "var".
-p->abc = 120; /* o ponteiro "p" está atribuindo "abc" o valor 120;
 
 
--- Operador de array (matriz) --
- Lista que contém ou não elementos incluidos, todos os elementos são mesmo tamanho e de valor fixo, arrays podem ser mutáveis.
 
-Colchetes ( [] ): O operador realiza a indexação de arrays sobre o operando, onde é possivel aplicar determinada 
+### Operador de array (matriz)
+Lista que contém ou não elementos incluidos, todos os elementos são mesmo tamanho e de valor fixo, arrays podem ser mutáveis.
+
+**Colchetes ( [] )**
+O operador realiza a indexação de arrays sobre o operando, onde é possivel aplicar determinada 
 quantidade de elementos dentro da array dessa váriavel.
 
 ```c
 char str[100]; 			/* listamos 100 elementos dentro da array de "str". */
-char hi[] = "hello"; 	/* array vazia tem elementos pré-definidos pelo compilador, a array de "hi" tem um "string" atribuido "hello". */
+
+/* 
+ * Array vazia tem elementos pré-definidos
+ * pelo compilador, a array de "hi" tem um
+ * "string" atribuido "hello".
+ */
+char hi[] = "hello"; 	
 ```
 
--- Operador Cast --
+### Operador Cast
 
 **Cast** 
- O operador cast "(tipo)" forçará determinada expressão a utilizar um tipo especificado entre parênteses. 
+O operador cast "(tipo)" forçará determinada expressão a utilizar um tipo especificado entre parênteses. 
 
 ```c
 #include <stdio.h>
 int main(void){
 	int i = 1;
-	printf("value of i / 2 is %f"(float) i / 2); 	/* float entre parênteses força o número a não ser um inteiro na saída. */
+	
+	/* float entre parênteses força
+	 * o número a não ser um inteiro na saída.
+	 */
+	printf("value of i / 2 is %f"(float) i / 2); 	
 	return 0;
 }
 ```
-
-### **Resumo das precedências dos operadores e como operam**
- A tabela mostra qual é a maior precedência em uma ordem superior a inferior e em sequẽncia em cada linha,  
-mostram a procedência em onde o da esquerda é o maior em relação ao da direita.
-
-|			   Maior			|
-|			   :--:				|
-|		     () [] ->			|	
-| ! ~ ++ -- - (cast) * & sizeof |
-| 			  * / %				|
-| 			  + -				|
-| 			  << >>				|
-| 		    < <= > >=			|
-| 			  == !=				|
-| 			    &				|
-| 			    ^				|
-| 			    !				|
-| 			    &&				|
-| 			    !!				|
-| 			    ?:				|
-| 		 = += -= *= /=etc.		|
-| 			    ,				|
-|			   Menor			|
-
-
-|    Operadores    |   Operam como	 |
-|	    :--: 	   |	   :--:		 |
-|	     ()		   |	  binário	 |
-|		 []		   |
-|		 ->		   |
-|		 !		   |
-|		 ~		   |
-|		 ++		   |
-|		 --		   |
-|	   (cast)	   |
-|	     +	       |  binário/unário |
-|	     -		   |  binário/unário |
-|	     *		   |  binário/unário |
-|        /		   | 	  binário 	 |
-|        %		   |  binário/unário |
-|        ++		   | 	  unário	 |
-|	     --		   |	  unário	 |
-|		 &		   |
-|	   sizeof	   |
-|				   |
-|				   |
-|				   |
-|				   |
-|				   |
-|				   |
