@@ -637,3 +637,52 @@ int main(void){
 	return 0;
 }
 ```
+### **Resumo das precedências dos operadores e como operam**
+ A tabela mostra qual é a maior precedência em uma ordem superior a inferior e em sequẽncia em cada linha,  
+mostram a procedência em onde o da esquerda é o maior em relação ao da direita.
+
+|			   Maior			|
+|			   :--:				|
+|		     () [] ->			|	
+| ! ~ ++ -- - (cast) * & sizeof |
+| 			  * / %				|
+| 			  + -				|
+| 			  << >>				|
+| 		    < <= > >=			|
+| 			  == !=				|
+| 			    &				|
+| 			    ^				|
+| 			    !				|
+| 			    &&				|
+| 			    !!				|
+| 			    ?:				|
+| 		 = += -= *= /=etc.		|
+| 			    ,				|
+|			   Menor			|
+
+
+|    Operadores    |   Operam como	 |
+|	    :--: 	   |	   :--:		 |
+|	     ()		   |	  binário	 |
+|		 []		   |
+|		 ->		   |
+|		 !		   |
+|		 ~		   |
+|		 ++		   |
+|		 --		   |
+|	   (cast)	   |
+|	     +	       |  binário/unário |
+|	     -		   |  binário/unário |
+|	     *		   |  binário/unário |
+|        /		   | 	  binário 	 |
+|        %		   |  binário/unário |
+|        ++		   | 	  unário	 |
+|	     --		   |	  unário	 |
+|		 &		   |
+|	   sizeof	   |
+|				   |
+|				   |
+|				   |
+|				   |
+|				   |
+|				   |
