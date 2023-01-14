@@ -1,4 +1,6 @@
-# Introdução  
+# <p style="text-align: center;"> Controle de software </p>
+
+## Introdução
  Este é um dicionário razoávelmente informativo sobre a linguagem C do padrão da American National Standards Institute (ANSI), o arquivo atual é
 exclusivamente sobre os comandos de controle de software.
 
@@ -37,7 +39,6 @@ int main(void){
  Outro exemplo de utilizaão do "if-else" nesse caso o código é com o objetivo de criar um jogo de advinhação:
 
 ```c
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -55,7 +56,6 @@ int main(void){
 
 	return 0;
 }
-
 ```
 ___
 **switch-case-default**  
@@ -64,7 +64,6 @@ coincide com a constante a mesma é executada, "default" é opcional, switch-cas
  Abaixo tem um exemplo de um programa de calculo usando "switch-case-default".
 
 ```c
-
 #include <stdio.h>
 
 int main(void){
@@ -97,7 +96,6 @@ int main(void){
     printf("Resultado: %d %c %d = %d\n", n0, op0, n1, res);
     return 0;
 }
-
 ```
 ___
 ### Comandos de laço 
@@ -111,7 +109,6 @@ executado, cada expressão é separada por ";" (ponto e virgula), indicando o fi
  Exemplo de loop:
 
 ```c
-
 #include <stdio.h>
 
 int main(void){
@@ -121,13 +118,11 @@ int main(void){
     }
     return 0;
 }
-
 ```
  
  E aqui também:
 
  ```c
-
 #include <stdio.h>
 
 int main(void){
@@ -137,13 +132,11 @@ int main(void){
     }
     return 0;
 }
-
 ```
 
  Aqui já não temos um loop:
 
 ```c
-
 #include <stdio.h>
 
 int main(void){
@@ -152,5 +145,4 @@ int main(void){
 	printf("value of x is: %d \n", x); // "printf" se repete uma uníca vez mostrando o valor 100.
     return 0;
 }
-
 ```

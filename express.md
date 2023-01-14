@@ -1,13 +1,15 @@
-# Introdução  
- 
- Dicionário razoávelmente informativo sobre a linguagem C do padrão da American National Standards Institute (ANSI), o arquivo atual é exclusivamente sobre as expressões.
-___
-## **Expressões** 
- Expressões são quando temos um conjunto de tipos, váriaveis, constantes, modificadores, funções e especificadores que juntos formam o que chamamos de expressão. 
+# <p style="text-align: center;"> Expressões </p> 
+
+## Introdução
+ Olá leitor, este é um dicionário razoávelmente informativo sobre a linguagem programação C do padrão da American National Standards Institute
+(ANSI), o arquivo atual é exclusivamente sobre as expressões e como é a estrutura de uma expressão em C. 
+
+## Expressões 
+ Expressões são um conjunto de tipos, váriaveis, constantes, modificadores, funções e especificadores que juntos formam o que chamamos de expressão. 
 
 ```c
 int main(void){
-	static int stc;		/* Expressão com um modificador de tipo de acesso, do tipo inteiro chamada de "stc". */
+	static int stc; /* Expressão com um modificador de tipo de acesso, do tipo inteiro chamada de "stc". */
 	return 0;
 }
 ```
@@ -71,7 +73,7 @@ int main(void){
  A tabela abaixo utiliza o operador "sizeof" que mede o tamanho em bytes de seu operando dentro de seu parâmetro formal.
 
 |  Tipos  |   Bits   |	 Bytes	|
-|  :--	  |    --    |	  --:	|
+|  :--:	  |   :--:   |	 :--:	|
 |  void	  |	   08    |	  01	|
 |  char   |	   08    |	  01	|
 |  int    |    32    |	  04	|
@@ -610,9 +612,3 @@ mostram a procedência em onde o da esquerda é o maior em relação ao da direi
 |	     --		   |	  unário	 |
 |		 &		   |
 |	   sizeof	   |
-|				   |
-|				   |
-|				   |
-|				   |
-|				   |
-|				   |

@@ -1,6 +1,6 @@
 ![Dictionary](./assets/Book-US_EN.png)  
 
-# The C Programming Dictionary 📘
+# <p style="text-align: center;"> The C Programming Dictionary 📘 </p>
 
 ### Sobre o projeto 📃 
  Este projeto é um dicionário razoávelmente completo sobre a linguagem de programação C, o dicionário aborda tudo sobre a linguagem contendo
