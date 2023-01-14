@@ -16,11 +16,11 @@ no dicionário, o mesmo possui e segue uma ordem específica para que seja poss�
  - O arquivo [concepts](./concepts.md) demonstra conceitos, exemplos da área da tecnologia que são aplicáveis a linguagem C.
 
 #### Expressões
- - O arquivo [express](./express.md) contém tudo o que forma uma expressão em C sendo esses os tipos, váriaveis, funções, constantes, ponteiros
+ - O arquivo [expressions](./expressions.md) contém tudo o que forma uma expressão em C sendo esses os tipos, váriaveis, funções, constantes, ponteiros
 e dentre outros elementos que compõe as expressões.
  
 #### Controle do software
- - O arquivo [softcontrol](./softcontrol.md) descreve tudo sobre o controle de software ou seja, algoritimos, funções de laço, funções de escolha.
+ - O arquivo [software_control](./softcontrol.md) descreve tudo sobre o controle de software ou seja, algoritimos, funções de laço, funções de escolha.
 ___
 
 ### Instalação 🖥️

@@ -1,0 +1,7 @@
+[book]
+title = "The C Programming Dictionary"
+description = "Um Dicionário razoavelmente informátivo sobre a linguagem de programação C (PT-BR)."
+authors = ["KanzenTaiwa"]
+language = "pt-br"
+multilingual = false
+src = "src"

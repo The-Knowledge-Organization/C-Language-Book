@@ -1,9 +1,3 @@
-# Introdução  
- Este é um dicionário razoávelmente informativo sobre a linguagem C do padrão da American National Standards Institute (ANSI), o arquivo atual é
-exclusivamente sobre os comandos de controle de software.
-
-___
-
 ## Comandos de controle do software
  Controle do software é necessário nas linguagens de programação para determinar ações especificas no software, são responsáveis por fazer seu código executar trechos 
 especificos, ou expressões especificas onde você controla como, onde e quando uma ação acontecer.
