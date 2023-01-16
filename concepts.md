@@ -62,35 +62,35 @@ para fazer com que se execute de maneira funcional e eficiente.
 ___
 
 - ### Assembler
- O assembler é uma ferramenta incluida no compilador que serve para reescrever o código escrito na linguagem de base para a linguagem alvo,
+  O assembler é uma ferramenta incluida no compilador que serve para reescrever o código escrito na linguagem de base para a linguagem alvo,
 nesse caso o código em C é transformado em Assembly na etapa inicial do processo de compilação. 
 ___
 
 - ### Linkeditor  
-  O linkeditor une o código C reescrito em Assembly pelo "assembler" onde há todas as intruções do seu código para a maquina e irá buscar 
-pelas bibliotecas incluidas, expressões, funções e unirá isso tudo em um único arquivo que é chamado de "código objeto" e que pode variar de 
-arquitetura, sistema operacional e hardware usados no processo de compilação assim gerando um binário específico pra a máquina alvo.
+  O linkeditor une o código C reescrito em Assembly pelo "assembler" e irá buscar pelas bibliotecas incluidas, expressões, funções e unirá 
+isso tudo em um único arquivo que é chamado de "código objeto" e que pode variar de arquitetura, sistema operacional e hardware usados no 
+processo de compilação assim gerando um binário específico pra a máquina base ou alvo.
 ___
 
 - ### Código Objeto  
-    Após o processo de compilação você tem o que se chama de código binário ou código objeto, esse é o código que você obtem quando ocorre 
+  Após o processo de compilação você tem o que se chama de código binário ou código objeto, esse é o código que você obtem quando ocorre 
 com sucesso o processo de compilação e linkedição onde há todas as instruções para ser executado na arquitetura e sistema operacional da 
 máquina atual ou na máquina alvo, todo o processo dependerá do compilador/interpretador utilizado e qual é a versão da linguagem C sendo usada.
 ___
 
-- ### Arquivo de cabeçalho
-    Os arquivos de cabeçalho conhecidos como "header" são arquivos onde por convenção incluirá bibliotecas, comandos para o pré-processador,
+- ### Arquivo de cabeçalho 
+  Os arquivos de cabeçalho conhecidos como "header" são arquivos onde por convenção incluirá bibliotecas, comandos para o pré-processador,
 funções e o que você necessitará ao longo do projeto para serem utilizados pelo código do software.
 ___
 
 - ### Tempo de compilação 
-    Eventos que acontecem em processo de compilação e que não ocorrem na execuçãoi e que é feito inteiramente pelo compilador um exemplo 
-desses processos é o de compilação, assembler e a linkedição.
+  O termo "tempo de compilação" são uma junção de eventos que acontecem em processo de compilação e que não ocorrem na execução, são processos
+feitos inteiramente pelo compilador um exemplo desses processos é o de compilação, assembler e a linkedição.
 ___
 
 - ### Tempo de execução
-    Eventos que acontecem no processo de execução contém a execução do seu código e de tudo que foi incluido no código fonte como bibliotecas,
-funções, váriaveis, estruturas.
+  O termo "tempo de execução" contém eventos que acontecem no processo de execução de determinado software ou código e de tudo que foi 
+incluido no código fonte como bibliotecas, funções, váriaveis, estruturas.
 ___
 
 - ### Mapa de memória  
@@ -176,3 +176,76 @@ interpretador fazer isso "automáticamente".
   
   No caso da linguagem C, isso não aconteceria devido a como foi contruida, mas com muito esforço é possivel tornar C uma linguagem 
 dinâmicamente/fracamente tipada mas lembre-se que isso não é algo que a linguagem foi projetada para suportar.
+___
+
+- ### Sistema binário
+
+  O sistema binário ou sistema de base dois é uma das formas mais básicas para se representar dados sendo o valor positivo representado "0" e 
+negativo por "1", usando uma sequência de 8 bits podemos representar dados com "bytes" que significa **b**inar**y** **te**rms, "termos binários"
+são utilizados para armazenar informações nisso podemos representar números de base decimal, octal, hexadecimal e dentre outros e assim 
+aumentando a ordem de grandeza tem os kilobytes, megabytes, gigabytes, terabytes e assim por diante
+ 
+  Para representarmos por exemplo o número decimais em sistema binário é dessa forma abaixo:
+
+  |  Decimal   |  Binário   |
+  |    :-:     |     :-:    | 
+  |    10      |  0000 1010 | 
+  |     9      |  0000 1001 |
+  |     8      |  0000 1000 |
+  |     7      |  0000 0111 |
+  |     6      |  0000 0110 |
+  |     5      |  0000 0101 |
+  |     4      |  0000 0100 |
+  |     3      |  0000 0011 |
+  |     2      |  0000 0010 |
+  |     1      |  0000 0001 |
+ 
+  Se adicionarmos 1 bit a mais no byte que corresponde ao valor 8 na tabela iremos para 9, o máximo que 1 byte suporta é o número decimal 255
+após isso para representar o número 256 é dessa forma "1111 1111 1", se utilizassemos o número decimal máximo de 2 bytes (16 bits) teremos 
+o número 65536.
+___
+- ### Tamanho dos tipos em C
+  
+  Em C é possivel saber exatamente quanto é o tamanho máximo suportado por cada tipo, modificador de tipos, modificadores de tipo de acesso
+usando um arquivo header chamado "limits.h" e "float.h" para ter acesso aos tipos float e double, nesses arquivos contém váriaveis onde é 
+possivel saber o quanto um tipo pode suportar de válor minímo e máximo em números de base decimal, abaixo uma demonstração de cada tipo usado:
+
+```c
+#include <stdio.h>
+#include <limits.h>
+#include <float.h>
+
+int main(void){
+    int intMax = INT_MAX, intMin = INT_MIN;
+    char charMax = CHAR_MAX, charMin = CHAR_MIN;
+    float floatMax = FLT_MAX, floatMin = FLT_MIN;
+    double doubleMax = DBL_MAX, doubleMin = DBL_MIN; 
+    int ans;
+
+    printf("Type size verifier.\n"
+           "Select the type you want: \n\n"
+           "int max(1)\n"
+           "int min(2)\n"
+           "char max(3)\n"
+           "char min(4)\n"
+           "float max(5)\n"
+           "float min(6)\n"
+           "double max(7)\n"
+           "double min(8)\n");
+    scanf("%d", &ans);
+
+    switch(ans){
+        case 1: printf("the maximum number supported by int is: %d", intMax); break;
+        case 2: printf("the minimum number supported by int is: %d", intMin); break;
+        case 3: printf("the maximum number supported by char is: %d", charMax); break;
+        case 4: printf("the minimum number supported by char is: %d", charMin); break;
+        case 5: printf("the maximum number supported by float is: %f", floatMax); break;
+        case 6: printf("the minimum number supported by float is: %f", floatMin); break;
+        case 7: printf("the maximum number supported by double is: %f", doubleMax); break;
+        case 8: printf("the minimum number supported by double is: %f", doubleMin); break;
+        default: printf("Error");
+    }
+
+    return 0;
+}
+```
