@@ -1,16 +1,16 @@
-# <p style="text-align: center;"> Dicionário da linguagem de programação C </p>  
+# Dicionário da linguagem de programação C  
  
 ## Introdução  
- Este é um dicionário razoávelmente informativo sobre a linguagem C do padrão da American National Standards Institute (ANSI), o arquivo 
-atual é exclusivamente sobre seus conceitos e termos aplicados não só exclusivamente a essa linguagem mas a toda programação e tecnologia.
+ Este dicionário reune todas as informações sobre a linguagem de programação C do padrão da American National Standards Institute (ANSI), 
+o arquivo atual é exclusivamente sobre os conceitos e termos do mundo da programação e da tecnologia aplicados a essa linguagem.  
 ___
 
 ## Termos e conceitos
 
 - ### Linguagem C
-  A linguagem de programação C foi publicamente lançada no ano de 1972, desenvolvida entre os anos de 1969 até 1972 nos laboratórios da Bell Labs 
-(na época da empresa AT&T e atualmente é um setor da empresa Nokia) por Dennis Ritchie (1941 - 2011) para o sistema operacional Unix, 
-a linguagem de programação C é procedural, estaticamente/fortemente tipada de propósito geral e turing complete.
+  A linguagem de programação C foi lançada ao público no ano de 1972, desenvolvida entre os anos de 1969 até 1972 nos laboratórios da Bell Labs 
+(na época da empresa AT&T e atualmente é um setor da empresa Nokia) inicialmente por Dennis Ritchie (1941 - 2011) para o sistema operacional Unix, 
+a linguagem de programação C é procedural, estaticamente tipada, de propósito geral e turing complete.
 
   Um código em C contém uma estrutura similar a esta abaixo,  onde o código está indentado e descrito em linguagem natural (PT-BR) para melhor
 compreensão para quem não tem nenhuma noção ou conhecimento de como um trecho de código ou software é escrito na linguagem C. 
@@ -154,7 +154,7 @@ linguagens de programação são "turing complete" como por exemplo a linguagem 
 linguagens como Python, Lua, C++ utilizaram C para serem criadas.
 ___
 
-- ### Estaticamente/Fortemente tipada
+- ### Estaticamente ou fortemente tipada
   Linguagens de programação estaticamente/fortemente tipadas são conhecidas por obrigarem a especificação de maneira explicita do tipo
 utilizado nas váriaveis na sua declaração, C é uma linguagem que foi projetada com esse intuito de ser estaticamente/fortemente tipada, como 
 é possivel ver no exemplo abaixo:
@@ -169,7 +169,7 @@ void *null;
 ```
 ___
 
-- ### Dinâmicamente/Fracamente tipada
+- ### Dinâmicamente ou fracamente tipada
   Linguages de programação dinâmicamente/fracamente tipadas são conhecidas por não obrigarem a utilização dos tipos para a definição das 
 váriaveis que estão presente no código nisso é possivel a intercalação entre definir o tipo ou não de uma váriavel ou deixar o compilador ou
 interpretador fazer isso "automáticamente". 
@@ -203,12 +203,27 @@ aumentando a ordem de grandeza tem os kilobytes, megabytes, gigabytes, terabytes
   Se adicionarmos 1 bit a mais no byte que corresponde ao valor 8 na tabela iremos para 9, o máximo que 1 byte suporta é o número decimal 255
 após isso para representar o número 256 é dessa forma "1111 1111 1", se utilizassemos o número decimal máximo de 2 bytes (16 bits) teremos 
 o número 65536.
+
+- ### Tabela de bits/bytes
+
+ A tabela abaixo mostra o tamanho em bits e bytes dos tipos básicos.
+
+|  Tipos  |   Bits   |	 Bytes	|
+|  :---:  |   :---:  |	 :---:	|
+|  void	  |	   08    |	  01	|
+|  char   |	   08    |	  01	|
+|  int    |    32    |	  04	|
+|  float  |    32    |	  04	|
+| double  |    64    |	  08	|
+
+
 ___
 - ### Tamanho dos tipos em C
   
-  Em C é possivel saber exatamente quanto é o tamanho máximo suportado por cada tipo, modificador de tipos, modificadores de tipo de acesso
-usando um arquivo header chamado "limits.h" e "float.h" para ter acesso aos tipos float e double, nesses arquivos contém váriaveis onde é 
-possivel saber o quanto um tipo pode suportar de válor minímo e máximo em números de base decimal, abaixo uma demonstração de cada tipo usado:
+  Em C é possivel saber exatamente qual é o tamanho máximo suportado por cada tipo, modificador de tipos, modificadores de tipo de acesso
+usando um arquivo header chamado "limits.h" e "float.h" para ter acesso aos tipos float e double, nesses "headers" contém váriaveis onde é 
+possivel saber o quanto um tipo pode suportar de válor minímo e máximo em números de base decimal, abaixo uma demonstração em códifgo de como 
+quanto cada tipo suporta, desde seu valor minimo até seu valor máximo:
 
 ```c
 #include <stdio.h>

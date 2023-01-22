@@ -1,8 +1,7 @@
-# <p style="text-align: center;"> Expressões </p> 
+# Expressões 
 
 ## Introdução
- Olá leitor, este é um dicionário razoávelmente informativo sobre a linguagem programação C do padrão da American National Standards Institute
-(ANSI), o arquivo atual é exclusivamente sobre as expressões e como é a estrutura de uma expressão em C. 
+ O arquivo atual é exclusivamente sobre as expressões e a estrutura de uma expressão na linguagem C. 
 
 ## Expressões 
  Expressões são um conjunto de tipos, váriaveis, constantes, modificadores, funções e especificadores que juntos formam o que chamamos de expressão. 
@@ -19,23 +18,27 @@ int main(void){
 ___
 
 **int**  
- O tipo "int" define a váriavel pra aceitar especificamente os caracteres inteiros.
+ O tipo "int" define a váriavel pra aceitar especificamente os números decimais mas suporta caracteres o que não é recomendável por causa 
+do tamanho de 4 bytes para definir apenas um único caractere.
 
 ```c
-int fn; 				/* Váriavel global "fn" é do tipo "int". */
-int main(void){ 		/* Função "main" é do tipo "int", essa função executa todo o programa. */
-	int fun = 100; 		/* Váriavel "fun" é do tipo "int", é uma váriavel local que possui um valor atribuido "100". */
-	return 0;
+int fn; /* Váriavel global "fn" é do tipo "int". */
+
+/* Função "main" é do tipo "int", essa função executa todo o programa. */
+int main(void){		
+    int nu = 100; /* Váriavel "fun" é do tipo "int", é uma váriavel local que possui um valor atribuido "100". */
+    int chr = 'a'; 
 }
 ```
 
 **char**  
- O tipo "char" define a váriavel pra aceitar especificamente caracteres.
+ O tipo "char" define a váriavel pra armazenar especificamente caracteres, é possivel armazenar números decimais mas com muita limitação 
+devido ao seu tamanho de 1 byte.
 
 ```c
 int main(void){
-	char str = 'i';		/* Váriavel "char str" tem atribuido o caractere 'i'. */
-	char num = 100;		/* Variavel "char num" tem o valor atruibuido 100. */
+	char str = 'i'; /* Váriavel "char str" tem atribuido o caractere 'i'. */
+	char num = 100;	/* Variavel "char num" tem o valor atruibuido 100. */
 }
 ```
 
@@ -43,65 +46,52 @@ int main(void){
  O tipo "void" define a váriavel como nula, vazia, sem valor.
 
 ```c
-int main(void){		/* função "main" contém no seu parâmetro o tipo "void". */	
-	void *p1;		/* váriavel de ponteiro "*p1" é do tipo "void". */
-	return 0;
+/* função "main" contém no seu parâmetro o tipo "void", ou seja parâmetro nulo. */
+int main(void){			
+	void *p1; /* váriavel de ponteiro "*p1" é do tipo "void". */
 }
 ```
 
 **float**  
- O tipo "float" define a váriavel pra aceitar os números com precisão ou seja ponto flutuante.
+ O tipo "float" define a váriavel para armazenar números decimais de ponto flutuante, é recomendado se utilizar números de ponto flutuante 
+devido ao seu tamanho de 4 bytes. 
 
 ```c
 int main(void){
 	float fnum = 10.123;
-	return 0;
 }
 ```
 
 **double**  
-O tipo "double" suporta o dobro de casas decimais que o tipo "float".
+O tipo "double" define a váriavel para suportar o dobro de casas decimais que o tipo "float", seu tamanho é de 8 bytes.
 
 ```c
 int main(void){
 	double dnum = 20.123;
-	return 0;
 }
 ```
 
-**Tabela de bits dos tipos básicos**  
- A tabela abaixo utiliza o operador "sizeof" que mede o tamanho em bytes de seu operando dentro de seu parâmetro formal.
-
-|  Tipos  |   Bits   |	 Bytes	|
-|  :--:	  |   :--:   |	 :--:	|
-|  void	  |	   08    |	  01	|
-|  char   |	   08    |	  01	|
-|  int    |    32    |	  04	|
-|  float  |    32    |	  04	|
-| double  |    64    |	  08	|
-
-
 ### **Modificadores de tipos** 
- Modificam a maneira como cada tipo básico define as váriaveis, os modificadores se aplicam apenas aos tipos ...
+ Modificam a maneira como cada tipo básico define as váriaveis, os modificadores se aplicam apenas aos tipos int, char, float e double e em 
+casos específicos são úteis para reduzir os bits de um tipo básico e especificar melhor o que determinado tipo suportará o que economiza 
+recursos em máquinas que não tem muito processamento.
 
 **signed**  
- O modificador de tipos "signed" define que os tipos sejam modificados para suportar números positivos e negativos entre -127 até +128.
+ O modificador de tipos "signed" define que os tipos sejam modificados para suportar números decimais positivos e negativos.
 
 ```c
 int main(void){
 	signed int x = -10;
 	signed int y = 20;
-	return 0;
 }
 ```
 
 **unsigned**  
- O modificador de tipos "unsigned" define que os tipos sejam modificados para suportar apenas números positivos de 0 até 255.
+ O modificador de tipos "unsigned" define que os tipos sejam modificados para suportar apenas números decimais positivos. 
 
 ```c
 int main(void){
 	unsigned int y = 91;
-	return 0;
 }
 ```
 
@@ -110,9 +100,8 @@ int main(void){
 
 ```c
 int main(void){
-	long int z = 100; 				/* int de 64 bits. */
-	long double numf = 123.45; 		/* double de 128 bits. */
-	return 0;
+	long int z = 100; /* int de 64 bits. */
+	long double numf = 123.45; /* double de 128 bits. */
 }
 ```
 
@@ -121,8 +110,7 @@ int main(void){
 
 ```c
 int main(void){
-	short int z = 10000;	/* int de 16 bits. */
-	return 0;
+	short int z = 10000; /* int de 16 bits. */
 }
 ```
 
@@ -540,7 +528,7 @@ b = *a;
 
 Devolve o tamanho ocupado na memória por determinado operando.
 
-**sizeof** 
+**sizeof**   
 Devolve o tamanho em bytes do operando incluido no parâmetro formal do operador.
 
 ```c
@@ -555,54 +543,42 @@ printf("tamanho de int é: %d bytes\n", sizeof (int));
 
 ### Operador de encadeamento
 
-**Virgula ( , )**
-Encadeaia multiplos operandos, no lado esquerdo do operador
+**Virgula ( , )**  
+ Encadeaia multiplos operandos, no lado esquerdo do operador
 será tratado como void, o lado direito torna-se o valor de toda a expressão.
 
 ```c
-/* 
- * Define "x" como inteiro, depois "y" e "z".
- * x = (y = 10, z = 20, y + z); /* "x" tem 
- * seu valor atribuido a partir da expressão dentro de parênteses.
- */
-int x, y, z; 
+int x, y, z; /* Define "x" como inteiro, depois "y" e "z". */
+x = (y = 10, z = 20, y + z); /* "x" tem seu valor atribuido a partir da expressão dentro de parênteses. */
 ```
 
-### Operadores de referência
+### Operadores de referência  
 Referenciam individualmente os elementos de um struct ou union.
 
-**Ponto ( . )**
+**Ponto ( . )**  
 O operador vai referenciar um elemento de um struct ou um union, abaixo um exemplo de um struct.
 
 ```c
-struct variant { 		/* "variant" é um identificador desse struct. */
-	int a;
+/* "variant" é um identificador desse struct. */
+struct variant{
+    int a;
 	char b[9];
-} var; 		  			/* "var" é uma váriavel do struct "variant". */
+} var; /* "var" é uma váriavel do struct "variant". */
 
-/* 
- * Váriavel de um struct chamada "var"
- * está referênciando o elemento "a" que
- * tem ser valor atribuido 120.
- */
+/* Váriavel de um struct chamada "var" está referênciando o elemento "a" que tem ser valor atribuido 120. */
 var.a = 120;  			
 ```
 
-**Seta ( -> )**
+**Seta ( -> )**  
 O operador servirá para referenciar um ponteiro de uma "struct".
 
 ```c
-/* 
- * Ponteiro do valor de "p" tem seu valor atribuido
- * ao ponteiro do endereço de "var".
- */
+/* Ponteiro do valor de "p" tem seu valor atribuido  ao ponteiro do endereço de "var". */
 struct variant *p = &var;
 
 // O ponteiro "p" está atribuindo "abc" o valor 120;
 p->abc = 120; 
 ```
-
-
 
 ### Operador de array (matriz)
 Lista que contém ou não elementos incluidos, todos os elementos são mesmo tamanho e de valor fixo, arrays podem ser mutáveis.
@@ -612,13 +588,10 @@ O operador realiza a indexação de arrays sobre o operando, onde é possivel ap
 quantidade de elementos dentro da array dessa váriavel.
 
 ```c
-char str[100]; 			/* listamos 100 elementos dentro da array de "str". */
+char str[100];	/* listamos 100 elementos dentro da array de "str". */
 
-/* 
- * Array vazia tem elementos pré-definidos
- * pelo compilador, a array de "hi" tem um
- * "string" atribuido "hello".
- */
+/* Array vazia tem elementos pré-definidos pelo compilador, 
+ * a array de "hi" tem um "string" atribuido "hello".*/
 char hi[] = "hello"; 	
 ```
 

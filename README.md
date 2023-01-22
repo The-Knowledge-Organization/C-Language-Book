@@ -1,8 +1,8 @@
 ![Dictionary](./assets/Book-US_EN.png)  
 
-# <p style="text-align: center;"> The C Programming Dictionary 📘 </p>
+# The C Programming Dictionary 📘 
 
-### Sobre o projeto 📃 
+### Introdução 📃 
  Este projeto é um dicionário razoávelmente completo sobre a linguagem de programação C, o dicionário aborda tudo sobre a linguagem contendo
 exemplos de código e definições sobre cada funcionalidade e como são aplicados os conceitos da computação aplicadas sobre C,
 e quais são os conceitos que a mesma trouxe para o mundo da programação e da tecnologia mundial.
@@ -33,8 +33,10 @@ ___
 
 ### Suporte 💪
 
- Se caso consentiu em me ajudar de alguma forma você pode fazer um "fork" do meu projeto mostrando erros de gráfia ou imprecisão nas informações
-mostradas no dicionário.  
- Agradeço a todos por fazerem o projeto ser possível ❤️
+ Para ajudar sinta-se livre para fazer um PR (Pull Request) do projeto, consertando erros de gráfia, imprecisão nas informações contidas 
+nos dicionários, adicionando conteúdo e se tiver vontade, criar seu dicionário dentro da organização sobre a linguagem que mais tenha domínio.
+ Antes de apoiar o projeto é necessário seguir uma padronização que está descrita no arquivo [standards](./standard.md). 
 
-###### Knowledge.
+ O projeto está aberto a ideias e melhorias.
+
+###### Knowledge 🧠

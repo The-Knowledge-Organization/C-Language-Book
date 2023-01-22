@@ -1,4 +1,4 @@
-# <p style="text-align: center;"> Controle de software </p>
+# Controle de software 
 
 ## Introdução
  Este é um dicionário razoávelmente informativo sobre a linguagem C do padrão da American National Standards Institute (ANSI), o arquivo atual é
@@ -18,7 +18,6 @@ especificos, ou expressões especificas onde você controla como, onde e quando 
 caso não  o "else" é executado, a utilização de else é opcional e if-else pode ser colocado dentro do outro if-else.
 
 ```c
-
 #include <stdio.h>
 
 int main(void){
@@ -33,7 +32,6 @@ int main(void){
 
 	return 0;
 }
-
 ```
 
  Outro exemplo de utilizaão do "if-else" nesse caso o código é com o objetivo de criar um jogo de advinhação:
@@ -58,6 +56,7 @@ int main(void){
 }
 ```
 ___
+
 **switch-case-default**  
  A condição "switch-case-default" testa o valor da expressão aplicado no parâmetro formal de "switch" contra as constantes aplicadas aos "cases", quando o valor da expressão
 coincide com a constante a mesma é executada, "default" é opcional, switch-case-default pode ser colocado dentro de outro switch-case-default.
