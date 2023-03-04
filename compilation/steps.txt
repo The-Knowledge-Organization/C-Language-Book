@@ -1,0 +1,9 @@
+| Passo a Passo de como funciona a compilação por debaixo dos "panos" |
+
+ Essa pasta contém todos (os possíveis) passos para como funcionaria a compilação que nesse caso utiliza o GCC (Gnu Compiler Collection), o arquivo 002.c é o código fonte onde
+está o programa, o programa 002-E.c está com a opção do gcc -E, que vai apenas processar os comandos para o pré-processador (#...) do arquivo 002.c, o compilador apenas incluirá o arquivo "stdio.h" que é uma "macro"
+dentro do arquivo 002.c já que foi requisitada pelo programador, nessa etapa o arquivo que teremos depois disso é o assembly nesse caso 002-S.s, esse arquivo mostra como o 
+código ficou depois do compilador ter traduzido para assembly com a opção -S que é a compilação mas sem a linkedição e o "assemble", ou seja a montagem com o código compilado
+e a linkedição, logo após isso temos o arquivo 002-L.o que é o arquivo de saida mas ainda não linkeditado, e no final após termos feito todo o processo de compilação com a 
+opção -o teremos um arquivo binário completamente compilado, montado (assemble) e linkeditado o que gera um executável com a possibilidade de ter um nome próprio por conta 
+da opção -o que é pra colocar o output com o nome que preferir. 
